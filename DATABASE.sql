@@ -24,4 +24,6 @@ coach_name varchar(20));
 
 show tables;
 show databases;
-select * from Cricket_teams;
+select * from Cricket_teams; 
+
+use project;
