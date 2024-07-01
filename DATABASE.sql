@@ -84,6 +84,55 @@ select  id from Cricket_teams;
 select * from Cricket_teams where id =70;
 select * from Cricket_teams where captain_name ='rohit';
 
+select * from Cricket_teams;
+select * from cricket_team where team_name = 'CSK';
+update cricket_team set team_name = 'CSK' where id=52;
+
+/*A SQL SYNTAX TO UPDATE THE TABLE
+UPDATE table_name SET column1 = value1, column2 = value2 WHERE condition;*/
+
+select * from Cricket_teams;
+
+update cricket_teams set  no_of_players = 12 where team_name = 'RCB'; 
+
+update cricket_teams set team_name = 'csk' where id = 55;
+
+update cricket_teams set  no_of_players = 20, captain_name='saad' where id='70';
+
+update cricket_teams set  team_name = 'aaaa', captain_name='abdul' where id='52';
+
+update cricket_teams set no_of_players = 20 where id;
+
+select * from Airport_details;
+
+update airport_details set price = 20000 where airport_name = 'Gadag';
+
+update airport_details set airport_name = 'hubli' where id = 5;
+
+update airport_details set arrival = '12:00' where id;
+
+update airport_details set departure = '6:00' where id = 8;
+
+/*SQL SYNTAX TO DELETE
+DELETE FROM table_name WHERE condition;8*/
+
+delete from cricket_teams where team_name= 'csk';
+
+delete from airport_details where id = 20;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
