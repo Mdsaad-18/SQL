@@ -97,4 +97,234 @@ INSERT INTO Product (id, prd_name, prd_price, manufactured_by, expiry_date, prd_
 select * from Product;
 desc Product;
 
+//Perform AND Operators for 5 different columns for both employee and product table;
+
+SYNTAX TO AND OPERATION on table product
+
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition1 AND condition2 AND condition3 ...;
+
+select  prd_name , prd_price from Product where id = 5 and prd_quantity = 100;
+select prd_price , prd_quantity from product where prd_name = 'laptop' and prd_brand= 'TechBrand' and id = 1;
+select * from product where prd_name = 'laptop' and prd_brand= 'TechBrand' and id = 1;
+select * from product where manufactured_by = 'photoGear' and id = 6;
+select prd_price , prd_quantity from product where prd_price=800 and prd_brand= 'mobilemakers';
+
+// And Operation on table Employee
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition1 AND condition2 AND condition3 ...;
+
+select emp_name , emp_id from employee where emp_sal = 60000 and mngr_id= 301;
+select emp_dept , emp_sal from employee where id=1 and emp_exp=5;
+select emp_mng , emp_mng_name from employee where id = 1 and mngr_id=301;
+select emp_id , emp_dept from employee where id=6 and mngr_id=303;
+select emp_name , emp_dept from employee where id=6 and mngr_id=303;
+
+
+ select * from Employee;
+ 
+ // OR operation on table product
+ 
+ SELECT column1, column2, ...
+FROM table_name
+WHERE condition1 OR condition2 OR condition3 ...;
+
+select prd_name , prd_price from product where id=1 or prd_quantity=50;
+select id , prd_quantity from product where prd_brand= 'techcorp' or prd_quantity=50;
+select expiry_date,id from product where prd_name = 'laptop' or prd_price=1200;
+select prd_name , prd_price from product where id =10 or prd_quantity=150;
+select id , prd_name from product where id =10 or prd_quantity=150;
+
+ select * from Product;
+ 
+ //OR operation on a table employee
+ select column1, coulumn2 from table_name where contn 1, or condtn 2...;
+ 
+ select id, emp_id from employee where emp_sal=60000 or emp_exp = 7; 
+select id, emp_dept,emp_mng from employee where emp_name='john doe' or emp_exp = 7; 
+select emp_name, emp_id , emp_sal from employee where id = 10 or emp_exp = 2; 
+select emp_mng_name,emp_exp,emp_id from employee where emp_sal=70000 or emp_exp = 2;
+select id,emp_dept,emp_exp from employee where emp_id=202 or emp_exp = 2; 
+ 
+  select * from Employee;
+  
+  Perform IN Operators for 5 different columns for both employee and product table. 
+SYNTAX
+SELECT column1, column2, ...
+FROM table_name
+WHERE column_name IN (value1, value2, ...);
+
+on a table employee
+
+select id, emp_name from employee where id in (1,2,3,4,5);
+select emp_dept, emp_sal from employee where emp_sal in (60000,70000,65000);
+select emp_name, emp_id from employee where emp_mng in (301,302,309,321);
+select id, emp_exp, emp_id, emp_sal from employee where emp_exp in (2,4,9,3,10);
+select emp_name, emp_dept,emp_mng from employee where id in (1,2,10,11,25);
+
+  select * from Employee;
+
+on a table product
+
+select id, prd_name, manufactured_by from product where  prd_quantity in (50,22,40,300,100);
+select expiry_date,prd_name,prd_brand,prd_price from product where  id in (1,22,5,6,30,10,14,16);
+select prd_brand,prd_name,prd_quantity,prd_price from product where  id  in (1,22,5,6,30,10,14,16);
+select expiry_date, prd_brand, prd_quantity from product where  prd_price in (1200,600,2500,2000,5000);
+select id,prd_brand, prd_price, manufactured_by from product where  prd_quantity in (20,50,100,50);
+ select * from Product;
+ 
+ Perform NOT IN Operator for 5 different columns for both employee and product table
+ SYNTAX
+ SELECT column1, column2, ...
+FROM table_name
+WHERE column_name NOT IN (value1, value2, ...);
+
+NOT IN OPERATOR ON PRODUCT
+
+SELECT expiry_date, prd_name from product where id not in (1,22,30,8,16,13);
+select prd_name, prd_price, prd_quantity from product where prd_brand not in ('techcorp', 'phonebrand');
+select id,prd_brand, prd_price, manufactured_by from product where  prd_quantity  not in (20,50,100,50);
+select prd_brand,prd_name,prd_quantity,prd_price from product where  id not in (1,22,5,6,30,10,14,16);
+select id, prd_name, manufactured_by from product where  prd_quantity not in (50,22,40,300,100);
+ select * from Product;
+ 
+ performing (not in) on a table employee
+
+select id, emp_name from employee where id  not in (1,2,3,4,5);
+select emp_dept, emp_sal from employee where emp_sal not in (60000,70000,65000);
+select emp_name, emp_id from employee where emp_mng not in (301,302,309,321);
+select id, emp_exp, emp_id, emp_sal from employee where emp_exp not  in (2,4,9,3,10);
+select emp_name, emp_dept,emp_mng from employee where id not in (1,2,10,11,25);
+
+  select * from Employee;
+  
+  Performing BETWEEN Logic for 5 different columns for both employee and product table.
+   performing (BETWEEN) on a table employee
+SYNTAX
+
+SELECT column1, column2, ...
+FROM table_name
+WHERE column_name BETWEEN value1 AND value2;
+
+select emp_name, emp_id from employee where emp_exp between 5 and 6;
+select id, emp_exp, emp_dept from employee where mngr_id between 301 and 320;
+select emp_dept, emp_id, emp_mng_name,emp_sal from employee where id between 11 and 25;
+select emp_sal,emp_exp,emp_mng_name,emp_id from employee where emp_exp between 2 and 7;
+select emp_id,emp_mng_name,emp_name from employee where emp_sal between 60000 and 100000;
+
+  select * from Employee;
+
+   performing (BETWEEN) on a table product
+   
+select prd_name, prd_brand, prd_price from product where id between 1 and 20;
+select prd_brand,prd_quantity,prd_price,prd_name from product where id between 10 and 20;
+select prd_price,prd_brand from product where prd_quantity between 20 and 50;
+select prd_brand,prd_name,prd_price from product where id between 10 and 20;
+select manufactured_by,expiry_date,prd_brand,prd_price from product where id between 10 and 20;
+
+  select * from product;
+
+Perform NOT BETWEEN Operators for 5 different columns for both employee and product table.
+
+SYNTAX
+SELECT column1, column2, ...
+FROM table_name
+WHERE column_name  NOT BETWEEN value1 AND value2;
+
+performing ( NOT BETWEEN) on a table employee
+
+select emp_name, emp_id from employee where emp_exp  NOT between 5 and 6;
+select id, emp_exp, emp_dept from employee where id NOT  between 10 and 30;
+select emp_dept, emp_id, emp_mng_name,emp_sal from employee where id NOT between 11 and 25;
+select emp_sal,emp_exp,emp_mng_name,emp_id from employee where emp_exp NOT between 2 and 7;
+select emp_id,emp_mng_name,emp_name from employee where emp_sal NOT between 60000 and 100000;
+
+  select * from Employee;
+  
+   performing ( NOT BETWEEN) on a table product
+   
+select prd_name, prd_brand, prd_price from product where id  not between 1 and 20;
+select prd_brand,prd_quantity,prd_price,prd_name from product where id not between 10 and 20;
+select prd_price,prd_brand from product where prd_quantity not between 20 and 50;
+select prd_brand,prd_name,prd_price from product where id not between 10 and 20;
+select manufactured_by,expiry_date,prd_brand,prd_price from product where id not between 10 and 20;
+
+  select * from product;
+  
+  Use like operator for 5 different columns for both employee and product table.
+  
+  SYNTAX
+  
+SELECT column1, column2, ...
+FROM table_name
+WHERE column_name LIKE pattern;
+
+performing a like on employee
+
+select * from employee where mngr_id like  '3%';
+select * from employee where emp_dept like  '%r';
+select * from employee where emp_mng_name like '%h';
+select * from employee where emp_id like '%5';
+select * from employee where emp_sal like '7%';
+
+select * from employee;
+
+performing a like on product
+
+select * from product where prd_price like  '1%';
+select * from product where manufactured_by like  't%';
+select * from product where prd_quantity like '5%';
+select * from product where prd_name like 'c%';
+select * from product where prd_brand like '%d';
+
+select * from product 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+   
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
 
