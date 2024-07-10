@@ -104,6 +104,95 @@ INSERT INTO laptop (id, brand, model, processor, ram_size, storage_size, screen_
 rollback;
 select * from laptop;
 
+todays task 10-07-24
+AGGRIGATE FUNCTIONS SYNTAX
+SELECT COUNT(column_name)
+FROM table_name;
+
+SELECT SUM(column_name)
+FROM table_name;
+
+SELECT AVG(column_name)
+FROM table_name;
+
+SELECT MIN(column_name)
+FROM table_name;
+
+SELECT MAX(column_name)
+FROM table_name;
+
+ORDER BY SYNTAX
+
+SELECT * FROM table_name
+ORDER BY column_name
+ASC|DESC;
+
+SELECT column_name,
+COUNT(*) FROM table_name
+GROUP BY column_name
+HAVING condition;
+
+
+USE PROJECT;
+
+SELECT * FROM laptop;
+
+/* Group By */
+
+SELECT COUNT(*) as count,model FROM laptop GROUP BY model;
+
+SELECT COUNT(*) as count,brand FROM laptop GROUP BY brand;
+
+SELECT COUNT(*) as count,ram_size FROM laptop GROUP BY ram_size;
+
+SELECT COUNT(*) as count,processor FROM laptop GROUP BY processor;
+
+SELECT COUNT(*) as count,price FROM laptop GROUP BY price;
+
+SELECT Max(price) as price,brand FROM laptop GROUP BY brand;
+
+SELECT Max(price) as price,model FROM laptop GROUP BY model;
+
+SELECT Max(warranty_period) as warraty,brand FROM laptop GROUP BY brand;
+
+SELECT Min(price) as price,brand FROM laptop GROUP BY brand;
+
+SELECT Min(price) as price,model FROM laptop GROUP BY model;
+
+SELECT Min(warranty_period) as warraty,brand FROM laptop GROUP BY brand;
+
+SELECT SUM(price) as price,brand FROM laptop GROUP BY brand;
+
+SELECT SUM(price) as price,model FROM laptop GROUP BY model;
+
+SELECT SUM(price) as price,processor FROM laptop GROUP BY processor;
+
+SELECT avg(price) as price,brand FROM laptop GROUP BY brand;
+
+SELECT avg(price) as price,model FROM laptop GROUP BY model;
+
+SELECT avg(warranty_period) as warraty,brand FROM laptop GROUP BY brand;
+
+use having clause;
+
+SELECT column_name,
+COUNT(*) FROM table_name
+GROUP BY column_name
+HAVING condition;
+
+select * from laptop;
+select  count(*) processor  from laptop group by ram_size having brand = dell;
+
+SELECT COUNT(*) ,brand  FROM laptop group by brand; 
+SELECT SUM(price) as price,processor FROM laptop GROUP BY processor having price > 7000;
+
+
+
+
+
+
+
+
 
 
 
